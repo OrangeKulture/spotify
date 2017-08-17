@@ -1,0 +1,55 @@
+h3 {
+    margin-top: 1.5em;
+    letter-spacing: 0.5em;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 2em;
+}
+
+input {
+    width: 58%; 
+    height: 40px;
+    padding: 7px;
+     margin-top:2.7em; 
+    text-align: center;
+    font-size: 1.25em;
+}
+
+::-webkit-input-placeholder {
+    letter-spacing: 0.35em;
+    color: rgba(131, 177, 8, 0.7);
+    text-align: center;
+}
+
+
+.label-primary {
+    font-size: 1em;
+    background-color: rgba(131, 177, 8, 0.7);
+}
+
+.jumbotron input:focus{
+    outline: none !important;
+	border:none;
+	box-shadow: 0 0 10px rgba(131, 177, 8,0.5);
+}
+
+.jumbotron {
+    background-image: url('assets/homebg_20.png');
+    padding-bottom: 25px !important;
+}
+
+.well {
+    background-color: rgba(28, 30, 34,0.45)
+}
+
+.well a {
+    display: inline-block;
+}
+
+.well a:hover{
+    text-decoration: none;
+    transform: scale(1.1);
+    color: rgb(131, 177, 8)
+}

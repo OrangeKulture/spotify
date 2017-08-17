@@ -1,0 +1,44 @@
+ <div *ngIf="album">
+  <div class="jumbotron">
+    <div class="row">
+      <div class="col-md-4">
+        <div *ngIf="album.images.length>0">
+          <img class="album-thumb img img-thumbnail" src="{{album.images[0].url}}" alt="{{album.artists[0].name}}">
+        </div>
+      </div>
+      <div class="col-md-8 text-center">
+        <div *ngIf="album.artists.length>0">
+          <div *ngFor="let artist of album.artists">
+            <h2>{{album.name}}</h2>
+            <h3>{{artist.name}}</h3>
+            <hr/>
+            <p>{{album.tracks.items.length}} Songs</p>
+            <p>Released on {{album.release_date | date:'shortDate'}}</p>
+            <p>{{album.label}}</p>
+             <span class="label label-primary">Popularity {{album.popularity}}<span class="glyphicon glyphicon-fire" style="color:rgb(131, 177, 8)"></span></span> 
+            <hr>
+             <a [routerLink]="['/artist/',album.artists[0].id]" class="btn btn-warning">Back to {{album.artists[0].name}}</a>
+             <a href="{{album.external_urls.spotify}}" target="_blank" class="btn btn-warning">View in Spotify</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <table class="table table-hover text-center">
+  <thead>
+    <tr>
+      <th>Track</th>
+      <th>Track Name</th>
+      <th>Duration</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let track of album.tracks.items" (click)="getTrack(track.external_urls.spotify)">
+        <td>{{track.track_number}}</td>
+        <td>{{track.name}}</td>
+        <td>{{track.duration_ms | date: 'mm:ss'}}</td> 
+      </tr>  
+  </tbody>
+  </table> 
+ </div>

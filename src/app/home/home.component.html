@@ -1,0 +1,29 @@
+<div class="jumbotron text-center">
+  <img src="../../assets/spotify.png" alt="Spotify: Music for Everyone"> 
+  <h3>Music For Everyone</h3>
+  <input type="text" [(ngModel)]="searchTerm" name="searchTerm" (keyup)="searchMusic()" placeholder="Search for your favourite artists">
+</div>
+<div *ngIf="searchResults">
+  <div *ngFor="let res of searchResults">
+    <div class="well" *ngIf="res['images'].length>0">
+      <div class="content">
+        <div class="row">
+           <div class="col-md-1">
+            <img src="{{res.images[0].url}}" alt="{{res.name}}" width="65" height="65">
+          </div> 
+          <div class="col-md-9">
+            <h4><a [routerLink]="['/artist/', res.id]">{{res.name}}</a></h4>
+            <div class="genre" *ngIf="res.genres.length>0">
+              <strong>Genres: </strong><span *ngFor="let genre of res.genres"> {{genre}} <span id="genLine">/</span> </span>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <span class="label label-primary follow">Followers : {{res.followers.total}}</span>
+            <br/><br/>
+            <span class="label label-primary">Popularity : {{res.popularity}} <span class="glyphicon glyphicon-fire"></span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

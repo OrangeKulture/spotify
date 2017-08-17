@@ -1,0 +1,14 @@
+.version, .link, .ic {
+    color: rgb(131, 177, 8);
+}
+h1 {
+    letter-spacing: 5px;
+}
+
+.wrap {
+    padding: 0 20px;
+}
+
+footer {
+    margin-top:5%;
+}

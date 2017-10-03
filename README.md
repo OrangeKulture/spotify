@@ -7,3 +7,7 @@ In order to view this application, please download a CORS Toggle extension for y
 <br>
 [FireFox](https://addons.mozilla.org/en-US/firefox/addon/cors-everywhere/)
 
+Once you have installed the extension for your browser, please enable and visit:
+
+https://orangekulture.github.io/spotify/
+
